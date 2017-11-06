@@ -5,11 +5,11 @@ package com.example.brick.yroklistview;
  */
 
 public class Transactions {
-    private String title;
-    private String sum;
+    public String name;
+    public String sum;
 
-    public Transactions(String title, String sum){
-        this.title = title;
+    public Transactions(String name, String sum){
+        this.name = name;
         this.sum = sum;
 
     }
