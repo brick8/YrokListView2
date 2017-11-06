@@ -16,10 +16,11 @@ import java.util.List;
  */
 
 public class TransactionAdapter extends ArrayAdapter<Transactions>{
+    List<Transactions> transactions;
 
-
-    public TransactionAdapter(@NonNull Context context, @NonNull List<Transactions> transactionses) {
-        super(context,0,  transactionses);
+    public TransactionAdapter(@NonNull Context context, @NonNull List<Transactions> transactions) {
+        super(context,0,  transactions);
+        this.transactions = transactions;
     }
 
     @NonNull
@@ -27,7 +28,7 @@ public class TransactionAdapter extends ArrayAdapter<Transactions>{
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         Transactions transactions = getItem(position);
         if(convertView == null) {
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, null);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
         TextView name = (TextView) convertView.findViewById(R.id.name);
         TextView sum = (TextView) convertView.findViewById(R.id.sum);
