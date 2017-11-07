@@ -17,31 +17,42 @@ import java.util.List;
  */
 
 public class TransactionAdapter extends ArrayAdapter<Transactions>{
-    List<Transactions> transactions;
+    public List<Transactions> transactions;
 
     public TransactionAdapter(@NonNull Context context, @NonNull List<Transactions> transactions) {
-        super(context,0,  transactions);
+        super(context, 0, transactions);
         this.transactions = transactions;
     }
 
+    static class ViewHolder {
+        public TextView name;
+        public TextView sum;
+        public TextView date;
+    }
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        ViewHolder holder;
         Transactions transactions = getItem(position);
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+            holder = new ViewHolder();
+            holder.name = (TextView) convertView.findViewById(R.id.name);
+            holder.sum = (TextView) convertView.findViewById(R.id.sum);
+            holder.date = (TextView) convertView.findViewById(R.id.date);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
-        TextView name = (TextView) convertView.findViewById(R.id.name);
-        TextView sum = (TextView) convertView.findViewById(R.id.sum);
-        TextView date = (TextView) convertView.findViewById(R.id.date);
-        name.setText(transactions.name);
-        sum.setText(Integer.toString(transactions.sum));
-        date.setText(transactions.date);
-        String color = "#ffffff";
+
+        holder.name.setText(transactions.name);
+        holder.sum.setText(Integer.toString(transactions.sum));
+        holder.date.setText(transactions.date);
         if (position % 2 == 0) {
-            color = "#f9de11";
-        } else if (position % 2 == 0) ;
-        convertView.setBackgroundColor(Color.parseColor(color));
+            convertView.setBackgroundColor(Color.parseColor("#f9de11"));
+        } else {
+            convertView.setBackgroundColor(Color.parseColor("#ffffff"));
+        }
         return convertView;
     }
 }
