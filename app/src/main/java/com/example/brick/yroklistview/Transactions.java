@@ -6,11 +6,15 @@ package com.example.brick.yroklistview;
 
 public class Transactions {
     public String name;
-    public String sum;
+    public int sum;
+    public String date;
 
-    public Transactions(String name, String sum){
+    public Transactions(String name, int sum, String date) {
         this.name = name;
         this.sum = sum;
+        this.date = date;
 
     }
+
+//
 }

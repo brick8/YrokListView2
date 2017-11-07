@@ -14,7 +14,7 @@
         <item name="android:orientation">vertical</item>
     </style>
     <style name="Container.Background">
-        <item name="android:background">@drawable/zapad_s_nami</item>
+        <item name="android:background">@drawable/background</item>
     </style>
 
 
