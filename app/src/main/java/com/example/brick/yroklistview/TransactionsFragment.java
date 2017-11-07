@@ -26,7 +26,7 @@ public class TransactionsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        final View inflate = inflater.inflate(R.layout.fragment_transactions, container);
+        final View inflate = inflater.inflate(R.layout.fragment_transactions, container, false);
         List<Transactions> adapterData = getDataList();
         transactionAdapter = new TransactionAdapter(getActivity(), adapterData);
         listView = (ListView) inflate.findViewById(R.id.listview);

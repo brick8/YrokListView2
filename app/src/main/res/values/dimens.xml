@@ -2,4 +2,8 @@
 <resources>
 
     <dimen name="dividerHeight">0.4dp</dimen>
+    <dimen name="layout_marginTop">10dp</dimen>
+    <dimen name="layout_marginRight">10dp</dimen>
+    <dimen name="textSize">16sp</dimen>
+    <dimen name="marginLeft">10dp</dimen>
 </resources>

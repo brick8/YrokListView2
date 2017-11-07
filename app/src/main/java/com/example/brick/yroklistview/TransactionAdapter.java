@@ -16,7 +16,7 @@ import java.util.List;
  * Created by brick on 04.11.2017.
  */
 
-public class TransactionAdapter extends ArrayAdapter<Transactions>{
+public class TransactionAdapter extends ArrayAdapter<Transactions> {
     public List<Transactions> transactions;
 
     public TransactionAdapter(@NonNull Context context, @NonNull List<Transactions> transactions) {
@@ -29,12 +29,13 @@ public class TransactionAdapter extends ArrayAdapter<Transactions>{
         public TextView sum;
         public TextView date;
     }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         ViewHolder holder;
         Transactions transactions = getItem(position);
-        if(convertView == null) {
+        if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
             holder = new ViewHolder();
             holder.name = (TextView) convertView.findViewById(R.id.name);

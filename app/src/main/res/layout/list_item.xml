@@ -17,11 +17,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/marginLeft"
+        android:layout_marginTop="@dimen/layout_marginTop"
         android:text="Дата"
-        android:textColor="#7F7F7F"
-        android:textSize="16dp"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/textSize"
         />
     <!--</LinearLayout>-->
     <TextView
@@ -29,20 +29,20 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="@dimen/layout_marginTop"
+        android:layout_marginRight="@dimen/layout_marginRight"
         android:text="Сумма"
-        android:textColor="#7F7F7F"
-        android:textSize="16dp" />
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/textSize" />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Сумма"
-        android:textColor="#7F7F7F"
-        android:textSize="16dp" />
+        android:layout_marginTop="@dimen/layout_marginTop"
+        android:layout_marginRight="@dimen/layout_marginRight"
+        android:text="Дата"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/textSize" />
 </RelativeLayout>
