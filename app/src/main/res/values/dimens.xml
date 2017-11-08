@@ -6,4 +6,5 @@
     <dimen name="layout_marginRight">10dp</dimen>
     <dimen name="textSize">16sp</dimen>
     <dimen name="marginLeft">10dp</dimen>
+    <dimen name="drawer_list_width">150dp</dimen>
 </resources>

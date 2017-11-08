@@ -20,7 +20,7 @@
         android:layout_marginLeft="@dimen/marginLeft"
         android:layout_marginTop="@dimen/layout_marginTop"
         android:text="Дата"
-        android:textColor="@color/textColor"
+        android:textColor="@color/primary_text"
         android:textSize="@dimen/textSize"
         />
     <!--</LinearLayout>-->
@@ -32,7 +32,7 @@
         android:layout_marginTop="@dimen/layout_marginTop"
         android:layout_marginRight="@dimen/layout_marginRight"
         android:text="Сумма"
-        android:textColor="@color/textColor"
+        android:textColor="@color/primary_text"
         android:textSize="@dimen/textSize" />
 
     <TextView
@@ -43,6 +43,6 @@
         android:layout_marginTop="@dimen/layout_marginTop"
         android:layout_marginRight="@dimen/layout_marginRight"
         android:text="Дата"
-        android:textColor="@color/textColor"
+        android:textColor="@color/primary_text"
         android:textSize="@dimen/textSize" />
 </RelativeLayout>

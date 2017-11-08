@@ -5,14 +5,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/list_background">
+        android:background="@color/primary_light">
 
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/listview"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="@dimen/dividerHeight"></ListView>
+            android:divider="@color/divider"
+            android:dividerHeight="@dimen/dividerHeight" />
     </LinearLayout>
 
 </RelativeLayout>
