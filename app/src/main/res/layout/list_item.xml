@@ -45,4 +45,17 @@
         android:text="Дата"
         android:textColor="@color/primary_text"
         android:textSize="@dimen/textSize" />
+
+    <!--<TextView-->
+    <!--android:id="@+id/categories"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_marginLeft="@dimen/marginLeft"-->
+    <!--android:layout_marginTop="@dimen/layout_marginTop"-->
+    <!--android:text="Категории"-->
+    <!--android:textColor="@color/primary_text"-->
+    <!--android:textSize="@dimen/textSize"-->
+    <!--/>-->
 </RelativeLayout>

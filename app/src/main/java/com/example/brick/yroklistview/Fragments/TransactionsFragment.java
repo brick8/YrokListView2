@@ -1,4 +1,4 @@
-package com.example.brick.yroklistview;
+package com.example.brick.yroklistview.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,6 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.example.brick.yroklistview.R;
+import com.example.brick.yroklistview.TransactionAdapter;
+import com.example.brick.yroklistview.Transactions;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

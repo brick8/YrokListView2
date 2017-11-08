@@ -12,6 +12,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.brick.yroklistview.Fragments.CategoriesFragments;
+import com.example.brick.yroklistview.Fragments.StatisticFragment;
+import com.example.brick.yroklistview.Fragments.TransactionsFragment;
+
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -24,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawler_layout);
         left_drawer = (ListView) findViewById(R.id.left_drawer);
-
+        setTitle(getString(R.string.trasactions));
+        getFragmentManager().beginTransaction().replace(R.id.content_frame, new TransactionsFragment()).commit();
         String[] navigationData = new String[]{"Траты", "Категории", "Статистика"};
         ArrayAdapter<String> navigationDrawerAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, navigationData);
         left_drawer.setAdapter(navigationDrawerAdapter);
@@ -58,6 +63,16 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.closeDrawer(left_drawer);
                 setTitle(getString(R.string.trasactions));
                 getFragmentManager().beginTransaction().replace(R.id.content_frame, new TransactionsFragment()).commit();
+            } else if (position == 1) {
+                left_drawer.setItemChecked(position, true);
+                drawerLayout.closeDrawer(left_drawer);
+                setTitle(getString(R.string.categories));
+                getFragmentManager().beginTransaction().replace(R.id.content_frame, new CategoriesFragments()).commit();
+            } else if (position == 2) {
+                left_drawer.setItemChecked(position, true);
+                drawerLayout.closeDrawer(left_drawer);
+                setTitle(getString(R.string.statistic));
+                getFragmentManager().beginTransaction().replace(R.id.content_frame, new StatisticFragment()).commit();
             }
         }
     }
