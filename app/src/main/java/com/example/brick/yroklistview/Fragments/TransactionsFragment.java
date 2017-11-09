@@ -3,10 +3,10 @@ package com.example.brick.yroklistview.Fragments;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.example.brick.yroklistview.R;
 import com.example.brick.yroklistview.TransactionAdapter;
@@ -23,7 +23,7 @@ import java.util.Locale;
  */
 
 public class TransactionsFragment extends Fragment {
-    private ListView listView;
+    private RecyclerView recyclerView;
     private TransactionAdapter transactionAdapter;
     List<Transactions> data = new ArrayList<>();
 
@@ -33,8 +33,8 @@ public class TransactionsFragment extends Fragment {
         final View inflate = inflater.inflate(R.layout.fragment_transactions, container, false);
         List<Transactions> adapterData = getDataList();
         transactionAdapter = new TransactionAdapter(getActivity(), adapterData);
-        listView = (ListView) inflate.findViewById(R.id.listview);
-        listView.setAdapter(transactionAdapter);
+        recyclerView = (RecyclerView) inflate.findViewById(R.id.tr);
+        recyclerView.setAdapter(transactionAdapter);
         return inflate;
 //        return super.onCreateView(inflater, container, savedInstanceState);
     }
