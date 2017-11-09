@@ -14,7 +14,7 @@
     </style>
 
     <style name="AppTheme.Main" parent="AppTheme">
-        <item name="drawerArrowStyle">@style/DrawrArrowStyle</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
     </style>
 
     <style name="ToolbarColors" parent="Theme.AppCompat.Light.NoActionBar">
@@ -23,7 +23,7 @@
         <item name="android:textColorSecondary">@color/abc_primary_text_material_dark</item>
     </style>
 
-    <style name="DrawrArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
         <item name="color">@color/icons</item>
     </style>
@@ -35,6 +35,13 @@
     </style>
     <style name="Container.Background">
         <item name="android:background">@color/primary_light</item>
+    </style>
+
+    <style name="CardView">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
     </style>
 
 

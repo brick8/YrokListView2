@@ -3,14 +3,17 @@ package com.example.brick.yroklistview.Fragments;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.example.brick.yroklistview.R;
+import com.example.brick.yroklistview.Transaction;
 import com.example.brick.yroklistview.TransactionAdapter;
-import com.example.brick.yroklistview.Transactions;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,33 +26,50 @@ import java.util.Locale;
  */
 
 public class TransactionsFragment extends Fragment {
-    private ListView listView;
+    private RecyclerView recyclerView;
     private TransactionAdapter transactionAdapter;
-    List<Transactions> data = new ArrayList<>();
+    List<Transaction> data = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View inflate = inflater.inflate(R.layout.fragment_transactions, container, false);
-        List<Transactions> adapterData = getDataList();
-        transactionAdapter = new TransactionAdapter(getActivity(), adapterData);
-        listView = (ListView) inflate.findViewById(R.id.listview);
-        listView.setAdapter(transactionAdapter);
+        List<Transaction> adapterData = getDataList();
+        transactionAdapter = new TransactionAdapter(adapterData);
+        recyclerView = (RecyclerView) inflate.findViewById(R.id.transactions_list);
+        FloatingActionButton fab = (FloatingActionButton) inflate.findViewById(R.id.fab);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        linearLayoutManager.setAutoMeasureEnabled(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(transactionAdapter);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Вызван по нажатию FloatingActionButton", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         return inflate;
 //        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
-    private List<Transactions> getDataList() {
+    private List<Transaction> getDataList() {
         SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
         Calendar now_calendar = Calendar.getInstance();
         String now = df.format(now_calendar.getTime());
-        data.add(new Transactions("Thelephone", 2000, now));
-        data.add(new Transactions("T-Shirts", 3000, now));
-        data.add(new Transactions("Jeans", 1000, now));
-        data.add(new Transactions("Notebook", 10000, now));
-        data.add(new Transactions("Powerbank", 2500, now));
-        data.add(new Transactions("Videocard", 7000, now));
-        data.add(new Transactions("SSD", 4000, now));
+        data.add(new Transaction("Thelephone", 2000, now));
+        data.add(new Transaction("T-Shirts", 3000, now));
+        data.add(new Transaction("Jeans", 1000, now));
+        data.add(new Transaction("Notebook", 10000, now));
+        data.add(new Transaction("Powerbank", 2500, now));
+        data.add(new Transaction("Videocard", 7000, now));
+        data.add(new Transaction("SSD", 4000, now));
+        data.add(new Transaction("Cvadrocopter", 7000, now));
+        data.add(new Transaction("Shoose", 5500, now));
+        data.add(new Transaction("Shorts", 4000, now));
+        data.add(new Transaction("Clock", 500, now));
         return data;
     }
 }
