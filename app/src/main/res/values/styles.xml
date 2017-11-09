@@ -37,7 +37,7 @@
         <item name="android:background">@color/primary_light</item>
     </style>
 
-    <style name="CardView">
+    <style name="Card_View">
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

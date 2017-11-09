@@ -23,7 +23,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
     }
 
     @Override
-    public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TransactionAdapter.CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
         return new CardViewHolder(itemView);
     }
