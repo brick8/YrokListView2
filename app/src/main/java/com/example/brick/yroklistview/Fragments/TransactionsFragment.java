@@ -1,16 +1,17 @@
 package com.example.brick.yroklistview.Fragments;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.brick.yroklistview.AddTransactionActivity;
 import com.example.brick.yroklistview.R;
 import com.example.brick.yroklistview.Transaction;
 import com.example.brick.yroklistview.TransactionAdapter;
@@ -47,8 +48,8 @@ public class TransactionsFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Вызван по нажатию FloatingActionButton", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(getActivity(), AddTransactionActivity.class);
+                getActivity().startActivity(intent);
             }
         });
         return inflate;

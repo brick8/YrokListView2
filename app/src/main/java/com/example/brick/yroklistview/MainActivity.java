@@ -1,7 +1,6 @@
 package com.example.brick.yroklistview;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,7 +16,7 @@ import com.example.brick.yroklistview.Fragments.StatisticFragment;
 import com.example.brick.yroklistview.Fragments.TransactionsFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private Toolbar toolbar;
+    public Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private ListView left_drawer;
     private ActionBarDrawerToggle drawerToggle;
@@ -40,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.trasactions, R.string.app_name);
-        drawerLayout.setDrawerListener(drawerToggle);
+        drawerLayout.addDrawerListener(drawerToggle);
+        drawerToggle.setDrawerIndicatorEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onPostCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onPostCreate(savedInstanceState, persistentState);
+    public void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
         drawerToggle.syncState();
     }
 

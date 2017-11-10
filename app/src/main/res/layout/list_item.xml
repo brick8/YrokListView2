@@ -10,6 +10,8 @@
         android:layout_height="60dp"
         android:layout_margin="5dp"
         android:layout_marginBottom="7dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         cardview:cardBackgroundColor="@color/background"
         cardview:cardCornerRadius="4dp">
 

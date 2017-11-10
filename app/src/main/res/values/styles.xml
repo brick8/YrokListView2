@@ -33,8 +33,11 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:orientation">vertical</item>
     </style>
-    <style name="Container.Background">
-        <item name="android:background">@color/primary_light</item>
+    <!--<style name="Container.Background">-->
+    <!--<item name="android:background">@drawable/background_main</item>-->
+    <!--</style>-->
+    <style name="Container.AddBackground">
+        <item name="android:background">@drawable/background</item>
     </style>
 
     <style name="Card_View">
