@@ -68,6 +68,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .build();
+//        Configuration dbConfiguration = new Configuration.Builder(this).setDatabaseName("Transactions.db").create();
+//        ActiveAndroid.initialize(dbConfiguration);
+//        SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
+//        Calendar now_calendar = Calendar.getInstance();
+//        String now = df.format(now_calendar.getTime());
+//        new Transaction("car", 1000, now).save();
+//        new Transaction("Telephone", 2000, now).save();
+//        new Transaction("Card", 3000, now).save();
+
     }
 
     @Override

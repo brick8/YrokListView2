@@ -48,6 +48,7 @@ dependencies {
     implementation("com.mikepenz:materialdrawer:6.0.1@aar") {
         transitive = true
     }
+    implementation 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar' //Google Material Icons
     implementation 'com.mikepenz:fontawesome-typeface:4.7.0.2@aar'     //FontAwesome
 }
